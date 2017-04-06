@@ -1,9 +1,12 @@
-function component() {
-	var element = document.createElement('div');
+import _ from 'lodash';
 
-	element.innerHTML = _.join(['Hello', ' webpack'], '');
+function component () {
+  var element = document.createElement('div');
 
-	return element;
+  /* lodash is required for the next line to work */
+  element.innerHTML = _.join(['Hello','webpack'], ' ');
+
+  return element;
 }
 
 document.body.appendChild(component());
