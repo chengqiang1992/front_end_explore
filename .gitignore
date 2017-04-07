@@ -1,4 +1,6 @@
 .DS_Store
 webpack-demo/node_modules/
 webpack-demo/dist/
+code_splitting/node_modules/
+code_splitting/dist/
 
