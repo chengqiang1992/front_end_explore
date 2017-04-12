@@ -1,6 +1,13 @@
 .DS_Store
-webpack-demo/node_modules/
-webpack-demo/dist/
+auto-unit-test-testing/node_modules/
 code_splitting/node_modules/
 code_splitting/dist/
+karma-webpack-vue/node_modules/
+webpack-demo/node_modules/
+webpack-demo/dist/
+webpack-karma-mocha/node_modules/
+
+
+
+
 
