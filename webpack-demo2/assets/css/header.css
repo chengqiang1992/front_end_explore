@@ -1,0 +1,52 @@
+/*带有头部信息的页面*/
+
+.flex-layout > div:nth-child(2) {
+	align-self: flex-end;
+}
+
+.page-header-position {
+	padding: 6.6% 8% 12.4% 5.6%;
+}
+
+.user-info {
+	margin-left: 1rem;
+}
+
+.user-info > div:nth-child(2) {
+	position: relative;
+	margin-top: 0.8rem;
+}
+.user-info > div:nth-child(2) > span {
+	display: inline-block;
+}
+.gold-icon-sm {
+	width: 2.4rem;
+	height: 2.4rem;
+}
+.user-info > div:nth-child(2) > span:nth-child(2) {
+	position: absolute;
+	margin-top: 0.6rem;
+	margin-left: 0.4rem;
+	color: #f8b91c;
+	letter-spacing:0;
+}
+
+
+
+.user-handle {
+	align-self: flex-start !important;
+}
+.user-handle > div:nth-child(2) {
+	margin-top: 1.2rem;
+}
+.user-handle a {
+	display: inline-block;
+	color: #232323;
+	background-image: url("../images/user-handle-bgm.png");
+    background-size: 100% 100%;
+	background-repeat: no-repeat;
+	padding: 0.8rem 1.8rem;
+}
+.user-handle .view-record {
+	padding: 0.8rem 3.5rem;
+}
