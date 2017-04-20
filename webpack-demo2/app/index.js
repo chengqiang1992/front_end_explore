@@ -3,7 +3,7 @@ import '../assets/css/base.css'
 var moment = require('moment');
 
 console.log(moment().format());
-console.log('moment().format()');
+console.log('moment()');
 
 function component () {
 	var element = document.createElement('div');
