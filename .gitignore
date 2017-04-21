@@ -8,6 +8,8 @@ webpack-demo/dist/
 webpack-demo2/node_modules/
 webpack-demo2/dist/
 webpack-karma-mocha/node_modules/
+webpack-hot/node_modules/
+css-grid-layout/node_modules/
 
 
 
