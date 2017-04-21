@@ -62,8 +62,8 @@ module.exports = {
 		new webpack.NamedModulesPlugin(),
 		// prints more readable module names in the browser console on HMR updates
 
-		new webpack.optimize.uglifyJsPlugin({
-			sourceMap: options.devtool && (options.devtool.indexOf("sourceMap") >= 0 || options.devtool.indexOf("source-map") >= 0)
-		})
+		// new webpack.optimize.uglifyJsPlugin({
+		// 	sourceMap: options.devtool && (options.devtool.indexOf("sourceMap") >= 0 || options.devtool.indexOf("source-map") >= 0)
+		// })
 	]
 }
