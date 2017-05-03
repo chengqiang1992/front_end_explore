@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>A Complete Guide to Grid | CSS-Tricks</title>
+
+	<style type="text/css">
+		/*reset*/
+		a,abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,
+		dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,
+		html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,
+		span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video {
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+
+
+	</style>
+</head>
+<body>
+	<header></header>
+	<main>
+		<nav class="main-nav"></nav>
+		<div class="page-wrap">
+			<header></header>
+		</div>
+
+		<article>
+			<h1>A Complete Guide to Grid</h1>
+			<div>
+				<p>CSS Grid Layout is the most powerful layout system available in CSS. It is a 2-dimensional system, meaning it can handle both columns and rows, unlike flexbox which is largely a 1-dimensional system. YOu work with Grid Layout by applying CSS rules both to a parent element (which becomes the Grid Container) and to that element children (which become Grid Items).</p>
+				<h3>Introduction</h3>
+				<p>CSS Grid Layout(aks "Gird"), is a two-dimensional grid-based layout system that aims to do nothing less than completely change the way we design grid-based user interfaces. CSS has always been used to lay out our web pages, but it's never done a bery good job of it. FIrst we used tables, then floats, positioning and inline-block, but all of these methods were essentially hacks and left out a lot of importanted for a simpler one-dimensional layouts, not complex two-dimensional layouts, not complex two dimensional ones (flex and Grid actually work very well together). Grid is the bery first CSS modules created specifically to solve the layout problem we've all been hacking our way around for as long as we've been making websites.</p>
+
+				<h3>Basic and Browser Support</h3>
+
+				<h3>Important Terminology</h3>
+				<p>Before diving into the concepts of Grid it's important to understand the terminology. Since the terms involved here are all kinda conceptually similar, it's easy to confuse them with one another if you don't first memoirze theire meaings defined by the Grid specification. But don't worry, there aren't many of them.</p>
+
+				<h4>Grid Container</h4>
+				<p>The element on which display: grid is applied. It's the direct parent of all the grid items. In this example container is the grid container</p>
+
+				<div class="container">
+					<div class="item item-1"></div>
+					<div class="item item-2"></div>
+					<div class="item item-3"></div>
+				</div>
+
+				<h4>Grid Item</h4>
+				<p>The children (e.g. direct descendants) of the grid container. Here the item elemnts are grid items but sub-item isn't.</p>
+
+				<div class="container">
+					<div class="item"></div>
+					<div class="item">
+						<p class="sub-item"></p>
+					</div>
+					<div class="item"></div>
+				</div>
+
+				<h4>Grid LIne</h4>
+				<p>The divding lines that make up the structure of the grid. They can be either vertical("column grid lines") or horizontal("row gird lines") and reside on either side of a row or column. Here the yellow line is an example of a column grid line.</p>
+
+				<h4>Grid Track</h4>
+				<p>The space between two adjacent grid lines. You can think of them like the columns or rows of the grid. Here's the grid track between the second and third row gird lines.</p>
+
+				<h4>Grid Cell</h4>
+				<p>The space between two adjacent row and two adjacent column grid lines. It's a single "unit" of the grid. Here's the grid cell between row grid lines 1 and 2, and column grid lines 2 and 3.</p>
+
+				<h4>Grid Area</h4>
+				<p>The total space surrounded by four grid lines. A grid area may be comprised of ny number of grid cells. Here's the grid area between row grid lines 1 and 3, and column grid lines 1 and 3.</p>
+
+
+
+				<h3>Grid Properties Table of Contents</h3>
+				<p>Properties for the Grid container</p>
+				<ul>
+					<li>display</li>
+					<li>grid-template-columns</li>
+					<li>grid-template-rows</li>
+					<li>grid-template-areas</li>
+					<li>grid-template</li>
+					<li>grid-column-gap</li>
+					<li>grid-row-gap</li>
+					<li>grid-gap</li>
+					<li>justify-items</li>
+					<li>align-items</li>
+					<li>justify-content</li>
+					<li>align-content</li>
+					<li>grid-auto-columns</li>
+					<li>grid-auto-rows</li>
+					<li>grid</li>
+				</ul>
+
+				<p>Properties for the Grid Items</p>
+				<ul>
+					<li>grid-column-start</li>
+					<li>grid-column-end</li>
+					<li>grid-row-start</li>
+					<li>grid-row-end</li>
+					<li>grid-column</li>
+					<li>grid-row</li>
+					<li>grid-area</li>
+					<li>justify-self</li>
+					<li>align-self</li>
+				</ul>
+
+				<div class="flex-half flex-parent">
+					<h2>Properties for the Parent</h2>
+					<div id="prop-display">
+						<h4>display</h4>
+						<p>Define the element as a grid container and establishes a new grid formatting context for its contents.</p>
+
+						<p>Values:</p>
+						<ul>
+							<li><b>grid - </b>generates a block-level grid</li>
+							<li><b>inline-grid - </b>generates an inline-level grid</li>
+							<li><b>subgrid - </b> if your grid container is itself a grid item (i.e. nested grids), you can use this property to indicate that you wang the sizes of its rows/columns to be taken form its parent rather than specifying its own.</li>
+
+							<pre>
+								<code>
+									.container {
+										display: grid | inline-grid | subgrid
+									}
+								</code>
+							</pre>
+							<p>Note: <code>column</code>, <code>float</code>, <code>clear</code>, and <code>vertical-align</code> have no effect on a grid container.</p>
+						</ul>
+
+						<h4>grid-template-columns</h4>
+						<h4>grid-template-rows</h4>
+						<p>Define the columns and rows of the grid with a space-separted list of values. The values represent the track size, and the space between them represents the grid line.</p>
+						<p>Values:</p>
+						<ul>
+							<li><b>&lt;track-size&gt;</b> - can be a length, a percentage, or a fraction of the free space in the grid (using the fr unit)</li>
+							<li><b>&lt;line-name&gt;</b> - an arbitrary name of your choosing</li>
+						</ul>
+						<pre>
+							<code>
+								.container {
+									grid-template-columns: <track-size> ... | <line-name> <track-size> ...'
+									grid-template-rows: <track-size> ... | <line-name> <track-size> ...'
+								}
+							</code>
+						</pre>
+
+						<p>Examples:</p>
+						<p>When you leave an empty space between the track values, the grid lines are automatically assigned numerical names:</p>
+						<pre>
+							<code>
+								.container {
+									grid-template-columns: 40px 50px auto 50px 40px;
+									grid-template-rows: 25% 100px auto;
+								}
+							</code>
+						</pre>
+						<p>But you can choose to explicitly name the lines. Note the bracket syntax for the line names:</p>
+
+						<p>Note that a line can have more than one name. For example, here the second line will have two names: row1-end and row2-sart:</p>
+
+						<p>If your definition contains repeating parts, you can use the <code>repeat()</code> notain to streamline things:</p>
+
+						<p>Which is equivlent to this:</p>
+
+						<p>The <code>fr</code> unit allows you to set the size of a track as a fraction of the free space of the grid container. For example, this will set each item to one third the width of the grid container:</p>
+
+						<P>The free space is calculated after any non-flexible items. In this example the total amount of free space available to the fr units doesn't include the 50px:</P>
+
+					</div>
+				</div>
+
+			</div>
+		</article>
+	</main>
+	<footer></footer>
+</body>
+</html>
